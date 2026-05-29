@@ -65,15 +65,14 @@ const client = new Client({
     authStrategy: new LocalAuth({
         dataPath: "/tmp/auth"
     }),
-    puppeteer: {
-        headless: "new",
-        executablePath: puppeteer.executablePath(),
-        args: [
-            "--no-sandbox",
-            "--disable-setuid-sandbox",
-            "--disable-dev-shm-usage"
-        ]
-    }
+puppeteer: {
+    headless: "new",
+    args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage"
+    ]
+}
 });
 
 client.on("qr", async (qr) => {
