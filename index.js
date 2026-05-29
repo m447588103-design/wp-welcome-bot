@@ -62,9 +62,12 @@ app.listen(PORT, () => {
 });
 
 const client = new Client({
-    authStrategy: new LocalAuth({
-        dataPath: "/tmp/auth"
+    authStrategy: new LocalAuth({ 
+        dataPath: "/tmp/auth",
+        clientId: "wp-bot"  // ← Eta add kor
     }),
+    ...
+});
 puppeteer: {
     headless: "new",
     args: [
